@@ -2,12 +2,78 @@ doctype html
 html
   head
     title Top Loading Bar
+    link(rel="stylesheet",href="src/index.css")
+    link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/atelier-estuary.light.min.css")
     script(src="ToProgress.js")
     script(src="src/index.js")
   body
-    button#increase Increase
-    button#decrease Decrease
-    button#hide Hide
-    button#show Show
-    button#auto Auto
-    button#reset Reset
+    a(href="https://github.com/djyde/ToProgress")
+      img(style="position: absolute; top: 0; right: 0; border: 0;",src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67",alt="Fork me on GitHub",data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png")
+    .container
+
+      .title ToProgress
+      .description A lightweight, no-dependency top bar library
+
+      .quick
+        h1 Quick Look
+        a.btn#increase Increase
+        a.btn#decrease Decrease
+        a.btn#auto Auto
+        a.btn#reset Reset
+      .usage
+        h1 Usage
+        p 1. Set options (The values below are default value)
+        pre
+          code.javascript
+            |var options = {
+            |  id: 'top-progress-bar',
+            |  color: '#F44336', 
+            |  height: '2px', 
+            |  duration: '.2s' 
+            |}
+        p 2. Get the progress bar instance
+        pre
+          code.javascript
+            | var progressBar = new TopProgress('body',options);
+        p 3. Play it!
+        pre
+          code.javascript
+            | progressBar.increase(20);
+
+        .api
+          h1 API
+          h3 new ToProgress(selector,options)
+          ul
+            li 
+              b selector
+              |  -  valid css selector, which container you wanna put the topbar to
+            li
+              b options
+              ul
+                li id - the id of auto-created top bar element
+                li color - top bar color
+                li height - top bar height
+                li duration - increase duration
+          h3 .increase(progress)
+          ul
+            li 
+              b progress
+              | - percentage number
+          h3 .decrease(progress)
+          ul
+            li 
+              b progress
+              | - percentage number
+          h3 .setProgress(progress)
+          ul
+            li 
+              b progress
+              | - percentage number
+          h3 .getProgress()
+
+      footer 2015 Randy's
+
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/languages/javascript.min.js")
+  script.
+    hljs.initHighlightingOnLoad();

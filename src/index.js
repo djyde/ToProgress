@@ -1,6 +1,16 @@
 ;(function(){
   window.onload = function(){
-    var progressBar = new TopProgress('body');
+
+
+    var options = {
+      // the values below are default value
+      id: 'top-progress-bar', // the id of auto-created top bar element 
+      color: '#F44336', // top bar color
+      height: '2px', // top bar height
+      duration: '.2s' // increase duration
+    }
+
+    var progressBar = new ToProgress('body',options);
 
     var $id = function(id){
       return document.getElementById(id)
@@ -14,13 +24,13 @@
       progressBar.decrease(5);
     })
 
-    $id('hide').addEventListener('click',function(){
-      progressBar.hide();
-    })
+    // $id('hide').addEventListener('click',function(){
+    //   progressBar.hide();
+    // })
 
-    $id('show').addEventListener('click',function(){
-      progressBar.show();
-    })
+    // $id('show').addEventListener('click',function(){
+    //   progressBar.show();
+    // })
 
 
 

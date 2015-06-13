@@ -1,5 +1,5 @@
 !(function(w){
-  w.TopProgress = function(selector,opt){
+  w.ToProgress = function(selector,opt){
     this.options = {
       id: 'top-progress-bar',
       color: '#F44336',
@@ -40,41 +40,41 @@
 
   }
 
-  TopProgress.prototype.getProgress = function(){
+  ToProgress.prototype.getProgress = function(){
     return parseInt(this.progressBar.style.width);
   }
 
-  TopProgress.prototype.setProgress = function(width){
-    if (width > 100) {
+  ToProgress.prototype.setProgress = function(progress){
+    if (progress > 100) {
       this.progressBar.style.width = '100%';
     } else {
-      this.progressBar.style.width = width + '%';
+      this.progressBar.style.width = progress + '%';
     }
   }
 
-  TopProgress.prototype.increase = function(width){
-    var currentWidth = this.getProgress();
-    if (currentWidth + width > 100) {
+  ToProgress.prototype.increase = function(progress){
+    var currentProgress = this.getProgress();
+    if (currentProgress + progress > 100) {
       this.progressBar.style.width = '100%';
     } else {
-      this.progressBar.style.width = currentWidth + width + '%';
+      this.progressBar.style.width = currentProgress + progress + '%';
     }
   }
 
-  TopProgress.prototype.decrease = function(width){
-    var currentWidth = this.getProgress();
-    if (currentWidth - width < 0) {
+  ToProgress.prototype.decrease = function(progress){
+    var currentProgress= this.getProgress();
+    if (currentProgress - progress < 0) {
       this.progressBar.style.width = '0%';
     } else {
-      this.progressBar.style.width = currentWidth - width + '%';
+      this.progressBar.style.width = currentProgress - progress + '%';
     }
   }
 
-  TopProgress.prototype.hide = function(){
+  ToProgress.prototype.hide = function(){
     this.progressBar.style.display = 'none';
   }
 
-  TopProgress.prototype.show = function(){
+  ToProgress.prototype.show = function(){
     this.progressBar.style.display = 'inline';
   }
 })(window)
