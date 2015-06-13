@@ -3,7 +3,7 @@
     this.options = {
       id: 'top-progress-bar',
       color: '#F44336',
-      height: '6px',
+      height: '2px',
       duration: '.2s'
     }
 

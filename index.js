@@ -28,7 +28,7 @@
       progressBar.increase(20);
       var interval = setInterval(function(){
         progressBar.increase(20);
-        if(parseInt(progressBar.get()) >= 100 ){
+        if(parseInt(progressBar.getProgress()) >= 100 ){
           clearInterval(interval);
         }
       },1000)
