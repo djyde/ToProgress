@@ -13,7 +13,7 @@ html
 
       .title ToProgress
       .description A lightweight, no-dependency top bar library
-
+      
       .quick
         h1 Quick Look
         a.btn#increase Increase
@@ -34,7 +34,7 @@ html
         p 2. Get the progress bar instance
         pre
           code.javascript
-            | var progressBar = new TopProgress('body',options);
+            | var progressBar = new ToProgress(options);
         p 3. Play it!
         pre
           code.javascript
@@ -42,11 +42,8 @@ html
 
         .api
           h1 API
-          h3 new ToProgress(selector,options)
+          h3 new ToProgress(options[,selector])
           ul
-            li 
-              b selector
-              |  -  valid css selector, which container you wanna put the topbar to
             li
               b options
               ul
@@ -54,6 +51,9 @@ html
                 li color - top bar color
                 li height - top bar height
                 li duration - increase duration
+            li 
+              b selector
+              |  -  valid css selector, if is defined, topbar will put on the top of the element
           h3 .increase(progress)
           ul
             li 

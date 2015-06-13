@@ -10,7 +10,7 @@
       duration: '.2s' // increase duration
     }
 
-    var progressBar = new ToProgress('body',options);
+    var progressBar = new ToProgress(options);
 
     var $id = function(id){
       return document.getElementById(id)

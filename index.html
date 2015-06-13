@@ -24,14 +24,13 @@
  duration: '.2s' 
 }</code></pre>
         <p>2. Get the progress bar instance</p>
-        <pre><code class="javascript">var progressBar = new TopProgress('body',options);</code></pre>
+        <pre><code class="javascript">var progressBar = new ToProgress(options);</code></pre>
         <p>3. Play it!</p>
         <pre><code class="javascript">progressBar.increase(20);</code></pre>
         <div class="api">
           <h1>API</h1>
-          <h3>new ToProgress(selector,options)</h3>
+          <h3>new ToProgress(options[,selector])</h3>
           <ul>
-            <li> <b>selector</b> -  valid css selector, which container you wanna put the topbar to</li>
             <li><b>options</b>
               <ul>
                 <li>id - the id of auto-created top bar element</li>
@@ -40,6 +39,7 @@
                 <li>duration - increase duration</li>
               </ul>
             </li>
+            <li> <b>selector</b> -  valid css selector, if is defined, topbar will put on the top of the element</li>
           </ul>
           <h3>.increase(progress)</h3>
           <ul>

@@ -1,5 +1,5 @@
 !(function(w){
-  w.ToProgress = function(selector,opt){
+  w.ToProgress = function(opt,selector){
     this.options = {
       id: 'top-progress-bar',
       color: '#F44336',
@@ -16,10 +16,14 @@
     this.progressBar = document.createElement('div');
     this.progressBar.id = this.options.id;
 
-    var els = document.querySelectorAll(selector);
-    for (var i = 0; i < els.length; i++) {
-      els[i].appendChild(this.progressBar);
-    };
+    if (selector) {
+      var els = document.querySelectorAll(selector);
+      for (var i = 0; i < els.length; i++) {
+        els[i].insertBefore(this.progressBar,els[i].firstChild);
+      };
+    } else {
+      document.querySelector('body').appendChild(this.progressBar);
+    }
 
     // init progress bar style
     this.progressBar.setCSS = function(style){
@@ -28,7 +32,7 @@
       }
     }
     this.progressBar.setCSS({
-      "position": "absolute",
+      "position": selector ? "relatvie" : "fixed",
       "top": "0",
       "left": "0",
       "right": "0",
