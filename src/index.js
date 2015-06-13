@@ -34,15 +34,15 @@
 
 
 
-    $id('auto').addEventListener('click',function(){
-      progressBar.increase(20);
-      var interval = setInterval(function(){
-        progressBar.increase(20);
-        if(parseInt(progressBar.getProgress()) >= 100 ){
-          clearInterval(interval);
-        }
-      },1000)
-    })
+    // $id('auto').addEventListener('click',function(){
+    //   progressBar.increase(20);
+    //   var interval = setInterval(function(){
+    //     progressBar.increase(20);
+    //     if(parseInt(progressBar.getProgress()) >= 100 ){
+    //       clearInterval(interval);
+    //     }
+    //   },1000)
+    // })
 
     $id('reset').addEventListener('click',function(){
       progressBar.setProgress(0);
