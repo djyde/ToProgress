@@ -20,6 +20,11 @@ html
         a.btn#decrease Decrease
         a.btn#auto Auto
         a.btn#reset Reset
+        a.btn#finish Finish
+        a.btn#show Show
+        a.btn#hide Hide
+
+
       .usage
         h1 Usage
         p 1. Set options (The values below are default value)
@@ -29,7 +34,7 @@ html
             |  id: 'top-progress-bar',
             |  color: '#F44336', 
             |  height: '2px', 
-            |  duration: '.2s' 
+            |  duration: '.2' 
             |}
         p 2. Get the progress bar instance
         pre
@@ -50,7 +55,7 @@ html
                 li id - the id of auto-created top bar element
                 li color - top bar color
                 li height - top bar height
-                li duration - increase duration
+                li duration - increase duration (seconds)
             li 
               b selector
               |  -  valid css selector, if is defined, topbar will put on the top of the element
@@ -70,6 +75,9 @@ html
               b progress
               | - percentage number
           h3 .getProgress()
+          h3 .finish()
+          h3 .show()
+          h3 .hide()
 
       footer 2015 Randy's
 

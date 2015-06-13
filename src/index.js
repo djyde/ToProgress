@@ -7,7 +7,7 @@
       id: 'top-progress-bar', // the id of auto-created top bar element 
       color: '#F44336', // top bar color
       height: '2px', // top bar height
-      duration: '.2s' // increase duration
+      duration: '.2' // increase duration
     }
 
     var progressBar = new ToProgress(options);
@@ -24,13 +24,13 @@
       progressBar.decrease(5);
     })
 
-    // $id('hide').addEventListener('click',function(){
-    //   progressBar.hide();
-    // })
+    $id('hide').addEventListener('click',function(){
+      progressBar.hide();
+    })
 
-    // $id('show').addEventListener('click',function(){
-    //   progressBar.show();
-    // })
+    $id('show').addEventListener('click',function(){
+      progressBar.show();
+    })
 
 
 
@@ -46,6 +46,10 @@
 
     $id('reset').addEventListener('click',function(){
       progressBar.setProgress(0);
+    })
+
+    $id('finish').addEventListener('click',function(){
+      progressBar.finish();
     })
 
   }

@@ -4,7 +4,7 @@
       id: 'top-progress-bar',
       color: '#F44336',
       height: '2px',
-      duration: '.2s'
+      duration: '.2'
     }
 
     if(opt && typeof opt === 'object'){
@@ -39,7 +39,7 @@
       "background-color": this.options.color,
       "height": this.options.height,
       "width": "0%",
-      "-webkit-transition": "width " + this.options.duration
+      "-webkit-transition": "width " + this.options.duration + "s" + ", opacity " + this.options.duration * 3 + "s"
     })
 
   }
@@ -49,6 +49,7 @@
   }
 
   ToProgress.prototype.setProgress = function(progress){
+    this.show();
     if (progress > 100) {
       this.progressBar.style.width = '100%';
     } else {
@@ -57,7 +58,11 @@
   }
 
   ToProgress.prototype.increase = function(progress){
+    this.show();
     var currentProgress = this.getProgress();
+    if (currentProgress === 100) {
+
+    };
     if (currentProgress + progress > 100) {
       this.progressBar.style.width = '100%';
     } else {
@@ -66,6 +71,7 @@
   }
 
   ToProgress.prototype.decrease = function(progress){
+    this.show();
     var currentProgress= this.getProgress();
     if (currentProgress - progress < 0) {
       this.progressBar.style.width = '0%';
@@ -74,11 +80,22 @@
     }
   }
 
+  ToProgress.prototype.finish = function(){
+    this.progressBar.style.width = '100%';
+    this.hide();
+    $this = this;
+    var interval = setInterval(function(){
+      $this.progressBar.style.width = '0';
+      $this.show();
+      clearInterval(interval);
+    },$this.options.duration * 3 * 1000)
+  }
+
   ToProgress.prototype.hide = function(){
-    this.progressBar.style.display = 'none';
+    this.progressBar.style.opacity = '0';
   }
 
   ToProgress.prototype.show = function(){
-    this.progressBar.style.display = 'inline';
+    this.progressBar.style.opacity = '1';
   }
 })(window)

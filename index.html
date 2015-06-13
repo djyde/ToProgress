@@ -12,7 +12,7 @@
       <div class="title">ToProgress</div>
       <div class="description">A lightweight, no-dependency top bar library</div>
       <div class="quick">
-        <h1>Quick Look</h1><a id="increase" class="btn">Increase</a><a id="decrease" class="btn">Decrease</a><a id="auto" class="btn">Auto</a><a id="reset" class="btn">Reset</a>
+        <h1>Quick Look</h1><a id="increase" class="btn">Increase</a><a id="decrease" class="btn">Decrease</a><a id="auto" class="btn">Auto</a><a id="reset" class="btn">Reset</a><a id="finish" class="btn">Finish</a><a id="show" class="btn">Show</a><a id="hide" class="btn">Hide</a>
       </div>
       <div class="usage">
         <h1>Usage</h1>
@@ -21,7 +21,7 @@
  id: 'top-progress-bar',
  color: '#F44336', 
  height: '2px', 
- duration: '.2s' 
+ duration: '.2' 
 }</code></pre>
         <p>2. Get the progress bar instance</p>
         <pre><code class="javascript">var progressBar = new ToProgress(options);</code></pre>
@@ -36,7 +36,7 @@
                 <li>id - the id of auto-created top bar element</li>
                 <li>color - top bar color</li>
                 <li>height - top bar height</li>
-                <li>duration - increase duration</li>
+                <li>duration - increase duration (seconds)</li>
               </ul>
             </li>
             <li> <b>selector</b> -  valid css selector, if is defined, topbar will put on the top of the element</li>
@@ -54,6 +54,9 @@
             <li> <b>progress</b>- percentage number</li>
           </ul>
           <h3>.getProgress()</h3>
+          <h3>.finish()</h3>
+          <h3>.show()</h3>
+          <h3>.hide()</h3>
         </div>
       </div>
       <footer>2015 Randy's</footer>
