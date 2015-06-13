@@ -1,3 +1,8 @@
+/* 
+** ToProgress v0.1.0 
+** http://github.com/djyde/ToProgress
+*/
+
 !(function(w){
   w.ToProgress = function(opt,selector){
     this.options = {
