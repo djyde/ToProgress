@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Top Loading Bar
+    title ToProgress.js
     link(rel="stylesheet",href="src/index.css")
     link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/atelier-estuary.light.min.css")
     script(src="ToProgress.js")
@@ -13,6 +13,10 @@ html
 
       .title ToProgress
       .description A lightweight, no-dependency top bar library
+      .download
+        a.download-btn(href="https://raw.githubusercontent.com/djyde/ToProgress/master/ToProgress.min.js?token=AA3zmXoNazDkCv8F9TY8N1ELamOlI6NHks5VhbbOwA%3D%3D") Download v0.1.0 (1.6 KB)
+        //- p
+        //-   a(href="https://github.com/djyde/ToProgress") view on Github
       
       .quick
         h1 Quick Look
@@ -26,6 +30,10 @@ html
 
       .usage
         h1 Usage
+        p 0. Import script
+        pre
+          code.html
+            | &lt;script src="path/to/ToProgress.min.js"&gt;&lt;/script&gt;
         p 1. Set options (The values below are default value)
         pre
           code.javascript

@@ -83,3 +83,27 @@ footer{
 .api ul{
   padding-left: 24px;
 }
+
+.version{
+  text-align: center;
+  font-size: .8em;
+  color: #616161;
+}
+.download{
+  text-align: center;
+}
+.download a.download-btn{
+  margin-top: 24px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #F44336;
+  font-weight: bold;
+  padding: 12px 18px;
+  border-radius: 4px;
+  -webkit-transition: background-color .4s;
+}
+.download a.download-btn:hover{
+  background-color: #D32F2F;
+}
+
