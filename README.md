@@ -43,3 +43,6 @@ return current progress (percentage number)
 ### .finish()
 ### .show()
 ### .hide()
+
+# License
+MIT License
