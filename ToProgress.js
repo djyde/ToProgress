@@ -50,7 +50,7 @@
       }
     }
     this.progressBar.setCSS({
-      "position": selector ? "absolute" : "fixed",
+      "position": selector ? "relative" : "fixed",
       "top": "0",
       "left": "0",
       "right": "0",
@@ -64,7 +64,6 @@
     if (selector) {
       var el = document.querySelector(selector);
       if (el) {
-        if (!el.style.position || el.style.position == 'initial') el.style.position = 'absolute';
         if (el.hasChildNodes()) {
           el.insertBefore(this.progressBar, el.firstChild);
         } else {
