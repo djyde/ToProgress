@@ -1,6 +1,6 @@
 # ToProgress
 
-A lightweight (1.6 KB), no-dependency top progress bar library.
+A lightweight (2.2 KB), no-dependency top progress bar library.
 
 # Demo
 
@@ -36,19 +36,19 @@ var topbar = new ToProgress(options);
 
 * **selector** - valid css selector, if is defined, progress bar will be put on the top of the element.
 
-### .increase(progress)
+### .increase(progress[,callback])
 * **progress** - percentage number
 
-### .decrease(progress)
+### .decrease(progress[,callback])
 * **progress** - percentage number
 
-### .setProgress(progress)
+### .setProgress(progress[,callback])
 * **progress** - percentage number
 
 ### .getProgress()
 return current progress (percentage number)
 
-### .finish()
+### .finish([,callback])
 ### .show()
 ### .hide()
 
