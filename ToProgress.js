@@ -2,29 +2,28 @@
 ** ToProgress v0.1.0 
 ** http://github.com/djyde/ToProgress
 */
+!(function(w){
+  // Animation Detection
+  function whichTransitionEvent(){
+    var t,
+        el = document.createElement("fakeelement");
 
-// Animation Detection
-function whichTransitionEvent(){
-  var t,
-      el = document.createElement("fakeelement");
+    var transitions = {
+      "transition"      : "transitionend",
+      "OTransition"     : "oTransitionEnd",
+      "MozTransition"   : "transitionend",
+      "WebkitTransition": "webkitTransitionEnd"
+    }
 
-  var transitions = {
-    "transition"      : "transitionend",
-    "OTransition"     : "oTransitionEnd",
-    "MozTransition"   : "transitionend",
-    "WebkitTransition": "webkitTransitionEnd"
-  }
-
-  for (t in transitions){
-    if (el.style[t] !== undefined){
-      return transitions[t];
+    for (t in transitions){
+      if (el.style[t] !== undefined){
+        return transitions[t];
+      }
     }
   }
-}
 
-window.transitionEvent = whichTransitionEvent();
+  var transitionEvent = whichTransitionEvent();
 
-!(function(w){
   w.ToProgress = function(opt, selector) {
     // Attributes
     var that = this;
