@@ -16,6 +16,14 @@ var options = {
 var topbar = new ToProgress(options);
 ```
 
+# Support
+
+* IE >= 10
+* Chrome
+* Firefox
+* Safari
+
+
 # API
 
 ### new ToProgress(options[,selector])
