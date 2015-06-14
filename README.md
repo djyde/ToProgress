@@ -23,6 +23,10 @@ var topbar = new ToProgress(options);
 * Firefox
 * Safari
 
+# Use cases
+
+If you are using ToProgress.js in production, just tell us.
+
 
 # API
 
