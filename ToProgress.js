@@ -121,6 +121,7 @@
   ToProgress.prototype.reset = function(callback) {
     this.progress = 0;
     this.transit();
+    callback && callback();
   }
 
   ToProgress.prototype.hide = function() {

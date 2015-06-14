@@ -10,7 +10,7 @@ http://djyde.github.io/ToProgress
 ```
 var options = {
   color: '#EEE',
-  duration: '.2',
+  duration: 0.2,
   height: '2px'
 }
 var topbar = new ToProgress(options);

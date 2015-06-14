@@ -16,11 +16,11 @@
     }
 
     $id('increase').addEventListener('click',function(){
-      progressBar.increase(5);
+      progressBar.increase(15);
     })
 
     $id('decrease').addEventListener('click',function(){
-      progressBar.decrease(5);
+      progressBar.decrease(15);
     })
 
     $id('hide').addEventListener('click',function(){
@@ -32,7 +32,7 @@
     })
 
     $id('reset').addEventListener('click',function(){
-      progressBar.setProgress(0);
+      progressBar.reset();
     })
 
     $id('finish').addEventListener('click',function(){
