@@ -3,14 +3,13 @@
 
 
     var options = {
-      // the values below are default value
-      id: 'top-progress-bar', // the id of auto-created top bar element 
-      color: '#F44336', // top bar color
-      height: '2px', // top bar height
-      duration: '.2' // increase duration
+      id: 'top-progress-bar',
+      color: '#F44336',
+      height: '2px',
+      duration: 0.2
     }
 
-    var progressBar = new ToProgress(options,'.test');
+    var progressBar = new ToProgress(options);
 
     var $id = function(id){
       return document.getElementById(id)
