@@ -41,11 +41,30 @@ header{
   padding: 12px;
 }
 
-.container{
-  margin: 0 auto;
-  margin-top: 128px;
-  width: 960px;
+@media screen and (max-width: 480px){
+  .container{
+    margin: 0 auto;
+    margin-top: 128px;
+    width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  .btn{
+    margin-bottom: 12px;
+  }
 }
+
+@media screen and (min-width: 481px){
+  .container{
+    margin: 0 auto;
+    margin-top: 128px;
+    width: 960px;
+  }
+}
+
+
 
 .title{
   color: #EF5350;
