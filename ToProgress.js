@@ -1,5 +1,5 @@
 /* 
-** ToProgress v0.1.0 
+** ToProgress v0.1.1
 ** http://github.com/djyde/ToProgress
 */
 !(function(w){
