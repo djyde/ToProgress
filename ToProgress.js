@@ -76,7 +76,7 @@
   }
 
   ToProgress.prototype.decrease = function(progress){
-    this.show();
+    this.show()
     var currentProgress= this.getProgress();
     if (currentProgress - progress < 0) {
       this.progressBar.style.width = '0%';
@@ -91,7 +91,6 @@
     $this = this;
     var interval = setInterval(function(){
       $this.progressBar.style.width = '0';
-      $this.show();
       clearInterval(interval);
     },$this.options.duration * 3 * 1000)
   }
