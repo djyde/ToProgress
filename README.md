@@ -18,7 +18,7 @@ var topbar = new ToProgress(options);
 
 # API
 
-### new ToProgress(options,[,selector])
+### new ToProgress(options[,selector])
 
 * options
   * **id** - the id of auto-created progress bar element
