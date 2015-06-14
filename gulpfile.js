@@ -7,4 +7,8 @@ gulp.task('js',function(){
     .pipe(uglify())
     .pipe(rename('ToProgress.min.js'))
     .pipe(gulp.dest('./'))
-})
+});
+
+gulp.watch('./ToProgress.js', ['js']);
+
+gulp.task('default', ['js']);
