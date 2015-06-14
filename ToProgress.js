@@ -3,103 +3,124 @@
 ** http://github.com/djyde/ToProgress
 */
 
+// Animation Detection
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
+window.transitionEvent = whichTransitionEvent();
+
 !(function(w){
-  w.ToProgress = function(opt,selector){
+  w.ToProgress = function(opt, selector) {
+    // Attributes
+    var that = this;
+    this.progress = 0;
     this.options = {
       id: 'top-progress-bar',
       color: '#F44336',
       height: '2px',
-      duration: '.2'
-    }
-
-    if(opt && typeof opt === 'object'){
-      for(var key in opt){
-        this.options[key] = opt[key]
+      duration: 0.2
+    };
+    if (opt && typeof opt === 'object') {
+      for (var key in opt) {
+        this.options[key] = opt[key];
       }
     }
-
+    this.options.opacityDuration = this.options.duration * 3;
     this.progressBar = document.createElement('div');
+    transitionEvent && this.progressBar.addEventListener(transitionEvent, function() {
+      that.progress = 0;
+    });
+
+    // Initialization
     this.progressBar.id = this.options.id;
-
-    if (selector) {
-      var els = document.querySelectorAll(selector);
-      for (var i = 0; i < els.length; i++) {
-        els[i].insertBefore(this.progressBar,els[i].firstChild);
-      };
-    } else {
-      document.querySelector('body').appendChild(this.progressBar);
-    }
-
-    // init progress bar style
-    this.progressBar.setCSS = function(style){
+    this.progressBar.setCSS = function(style) {
       for(var property in style){
         this.style[property] = style[property];
       }
     }
     this.progressBar.setCSS({
-      "position": selector ? "relatvie" : "fixed",
+      "position": selector ? "absolute" : "fixed",
       "top": "0",
       "left": "0",
       "right": "0",
       "background-color": this.options.color,
       "height": this.options.height,
       "width": "0%",
-      "-webkit-transition": "width " + this.options.duration + "s" + ", opacity " + this.options.duration * 3 + "s"
-    })
+      "-webkit-transition": "width " + this.options.duration + "s" + ", opacity " + this.options.opacityDuration + "s"
+    });
 
+    // Create the Progress Bar
+    if (selector) {
+      var el = document.querySelector(selector);
+      if (el) {
+        if (!el.style.position || el.style.position == 'initial') el.style.position = 'absolute';
+        if (el.hasChildNodes()) {
+          el.insertBefore(this.progressBar, el.firstChild);
+        } else {
+          el.appendChild(this.progressBar);
+        }
+      }
+    } else {
+      document.body.appendChild(this.progressBar);
+    }
   }
 
-  ToProgress.prototype.getProgress = function(){
-    return parseInt(this.progressBar.style.width);
+  ToProgress.prototype.transit = function() {
+    this.progressBar.style.width = this.progress + '%';
   }
 
-  ToProgress.prototype.setProgress = function(progress){
+  ToProgress.prototype.getProgress = function() {
+    return this.progress;
+  }
+
+  ToProgress.prototype.setProgress = function(progress, callback) {
     this.show();
     if (progress > 100) {
-      this.progressBar.style.width = '100%';
+      this.progress = 100;
+    } else if (progress < 0) {
+      this.progress = 0;
     } else {
-      this.progressBar.style.width = progress + '%';
+      this.progress = progress;
     }
+    this.transit();
+    callback && callback();
   }
 
-  ToProgress.prototype.increase = function(progress){
+  ToProgress.prototype.increase = function(toBeIncreasedProgress, callback) {
     this.show();
-    var currentProgress = this.getProgress();
-    if (currentProgress === 100) {
-
-    };
-    if (currentProgress + progress > 100) {
-      this.progressBar.style.width = '100%';
-    } else {
-      this.progressBar.style.width = currentProgress + progress + '%';
-    }
+    this.setProgress(this.progress + toBeIncreasedProgress, callback);
   }
 
-  ToProgress.prototype.decrease = function(progress){
-    this.show()
-    var currentProgress= this.getProgress();
-    if (currentProgress - progress < 0) {
-      this.progressBar.style.width = '0%';
-    } else {
-      this.progressBar.style.width = currentProgress - progress + '%';
-    }
+  ToProgress.prototype.decrease = function(toBeDecreasedProgress, callback) {
+    this.show();
+    this.setProgress(this.progress - toBeDecreasedProgress, callback);
   }
 
-  ToProgress.prototype.finish = function(){
-    this.progressBar.style.width = '100%';
+  ToProgress.prototype.finish = function(callback) {
+    this.setProgress(100, callback);
     this.hide();
-    $this = this;
-    var interval = setInterval(function(){
-      $this.progressBar.style.width = '0';
-      clearInterval(interval);
-    },$this.options.duration * 3 * 1000)
   }
 
-  ToProgress.prototype.hide = function(){
+  ToProgress.prototype.hide = function() {
     this.progressBar.style.opacity = '0';
   }
 
-  ToProgress.prototype.show = function(){
+  ToProgress.prototype.show = function() {
     this.progressBar.style.opacity = '1';
   }
 })(window)
