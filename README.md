@@ -1,6 +1,6 @@
 # ToProgress
 
-A lightweight (1.6 KB), no-dependcy top progress bar library.
+A lightweight (1.6 KB), no-dependency top progress bar library.
 
 # Demo
 
