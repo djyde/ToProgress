@@ -41,9 +41,6 @@
     }
     this.options.opacityDuration = this.options.duration * 3;
     this.progressBar = document.createElement('div');
-    transitionEvent && this.progressBar.addEventListener(transitionEvent, function() {
-      that.progress = 0;
-    });
 
     // Initialization
     this.progressBar.id = this.options.id;
@@ -111,8 +108,18 @@
   }
 
   ToProgress.prototype.finish = function(callback) {
+    var that = this;
     this.setProgress(100, callback);
     this.hide();
+    transitionEvent && this.progressBar.addEventListener(transitionEvent, function(e) {
+      that.reset();
+      that.progressBar.removeEventListener(e.type, arguments.callee);
+    });
+  }
+
+  ToProgress.prototype.reset = function(callback) {
+    this.progress = 0;
+    this.transit();
   }
 
   ToProgress.prototype.hide = function() {
