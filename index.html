@@ -42,22 +42,23 @@
                 <li>duration - increase duration (seconds)</li>
               </ul>
             </li>
-            <li> <b>selector</b> -  valid css selector, if is defined, topbar will put on the top of the element</li>
+            <li> <b>selector</b> -  valid css selector, if is defined, topbar will put on the top of the element. Only find the first element.</li>
           </ul>
-          <h3>.increase(progress)</h3>
+          <h3>.increase(progress[,callback])</h3>
           <ul>
             <li> <b>progress</b>- percentage number</li>
           </ul>
-          <h3>.decrease(progress)</h3>
+          <h3>.decrease(progress[,callback])</h3>
           <ul>
             <li> <b>progress</b>- percentage number</li>
           </ul>
-          <h3>.setProgress(progress)</h3>
+          <h3>.setProgress(progress[,callback])</h3>
           <ul>
             <li> <b>progress</b>- percentage number</li>
           </ul>
+          <h3>.reset([,callback])</h3>
+          <h3>.finish([,callback])</h3>
           <h3>.getProgress()</h3>
-          <h3>.finish()</h3>
           <h3>.show()</h3>
           <h3>.hide()</h3>
         </div>

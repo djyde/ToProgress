@@ -34,7 +34,7 @@ var topbar = new ToProgress(options);
   * **height** - progress bar height 
   * **duration** - increase duration (seconds)
 
-* **selector** - valid css selector, if is defined, progress bar will be put on the top of the element.
+* **selector** - valid css selector, if is defined, progress bar will be put on the top of the element. Only find the first element.
 
 ### .increase(progress[,callback])
 * **progress** - percentage number
@@ -45,10 +45,13 @@ var topbar = new ToProgress(options);
 ### .setProgress(progress[,callback])
 * **progress** - percentage number
 
+### .reset([,callback])
+
+### .finish([,callback])
+
 ### .getProgress()
 return current progress (percentage number)
 
-### .finish([,callback])
 ### .show()
 ### .hide()
 

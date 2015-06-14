@@ -63,24 +63,25 @@ html
                 li duration - increase duration (seconds)
             li 
               b selector
-              |  -  valid css selector, if is defined, topbar will put on the top of the element
-          h3 .increase(progress)
+              |  -  valid css selector, if is defined, topbar will put on the top of the element. Only find the first element.
+          h3 .increase(progress[,callback])
           ul
             li 
               b progress
               | - percentage number
-          h3 .decrease(progress)
+          h3 .decrease(progress[,callback])
           ul
             li 
               b progress
               | - percentage number
-          h3 .setProgress(progress)
+          h3 .setProgress(progress[,callback])
           ul
             li 
               b progress
               | - percentage number
+          h3 .reset([,callback])
+          h3 .finish([,callback])
           h3 .getProgress()
-          h3 .finish()
           h3 .show()
           h3 .hide()
 
