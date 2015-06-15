@@ -1,2 +1,7 @@
 node_modules
 .DS_Store
+
+# page file
+*.jade
+*.html
+src
