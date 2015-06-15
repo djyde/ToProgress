@@ -6,6 +6,14 @@ A lightweight (2.2 KB), no-dependency top progress bar library.
 
 http://djyde.github.io/ToProgress
 
+# Screenshot
+
+####Desktop
+![desktop](http://ww4.sinaimg.cn/large/62580dd9gw1et3i1t9amjj218b0q5juw.jpg)
+
+####Mobile
+![mobile](http://ww2.sinaimg.cn/large/62580dd9gw1et41eqm2usg20f00qo7if.gif)
+
 # Quick Start
 ```
 var options = {
