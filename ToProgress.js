@@ -95,7 +95,11 @@
       this.progress = progress;
     }
     this.transit();
-    callback && callback();
+
+    setTimeout(function(){
+      callback && callback();
+    }, this.options.duration*100);
+    
   }
 
   ToProgress.prototype.increase = function(toBeIncreasedProgress, callback) {
