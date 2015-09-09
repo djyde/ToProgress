@@ -2,7 +2,16 @@
 ** ToProgress v0.1.1
 ** http://github.com/djyde/ToProgress
 */
-!(function(w){
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define([], factory)
+  } else if (typeof exports === 'object') {
+    module.exports = factory()
+  } else {
+    root.ToProgress = factory()
+  }
+})(this, function() {
+
   // Animation Detection
   function whichTransitionEvent(){
     var t,
@@ -24,9 +33,8 @@
 
   var transitionEvent = whichTransitionEvent();
 
-  w.ToProgress = function(opt, selector) {
+  function ToProgress(opt, selector) {
     // Attributes
-    var that = this;
     this.progress = 0;
     this.options = {
       id: 'top-progress-bar',
@@ -112,6 +120,7 @@
     var that = this;
     this.setProgress(100, callback);
     this.hide();
+
     transitionEvent && this.progressBar.addEventListener(transitionEvent, function(e) {
       that.reset();
       that.progressBar.removeEventListener(e.type, arguments.callee);
@@ -131,4 +140,6 @@
   ToProgress.prototype.show = function() {
     this.progressBar.style.opacity = '1';
   }
-})(window)
+
+  return ToProgress
+})
