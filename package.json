@@ -2,7 +2,7 @@
   "name": "toprogress",
   "version": "0.1.0",
   "description": "A lightweight, no-dependency top progress bar library",
-  "main": "ToProgress.js",
+  "main": "lib/toprogress.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
