@@ -1,7 +1,8 @@
 # ToProgress
 
 [![NPM version](https://img.shields.io/npm/v/toprogress.svg?style=flat-square)](https://www.npmjs.com/package/toprogress)
-[![NPM download](https://img.shields.io/npm/dm/toprogress.svg?style=flat-square)](https://www.npmjs.com/package/toprogress)
+[![npm](https://img.shields.io/npm/dt/toprogress.svg)](https://www.npmjs.com/package/toprogress)
+[![npm](https://img.shields.io/npm/l/toprogress.svg)](https://www.npmjs.com/package/toprogress)
 
 A lightweight (2.2 KB), no-dependency top progress bar library.
 
