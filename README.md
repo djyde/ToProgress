@@ -49,6 +49,7 @@ If you are using ToProgress.js in production, just tell us.
   * **color** - progress bar color
   * **height** - progress bar height 
   * **duration** - increase duration (seconds)
+  * **position** - the progress bar position. `top` or `bottom`
 
 * **selector** - valid css selector, if is defined, progress bar will be put on the top of the element. Only find the first element.
 
