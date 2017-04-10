@@ -12,14 +12,14 @@ http://djyde.github.io/ToProgress
 
 # Screenshot
 
-####Desktop
+#### Desktop
 ![desktop](http://ww4.sinaimg.cn/large/62580dd9gw1et3i1t9amjj218b0q5juw.jpg)
 
-####Mobile
+#### Mobile
 ![mobile](http://ww2.sinaimg.cn/large/62580dd9gw1et41eqm2usg20f00qo7if.gif)
 
 # Quick Start
-```
+```JS
 var options = {
   color: '#EEE',
   duration: 0.2,
